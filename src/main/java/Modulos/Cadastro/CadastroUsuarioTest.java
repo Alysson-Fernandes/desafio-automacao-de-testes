@@ -3,6 +3,7 @@ package Modulos.Cadastro;
 import Paginas.BuscaPage;
 import Paginas.CadastroPage;
 import Paginas.ExcluirPage;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -71,5 +72,10 @@ public class CadastroUsuarioTest {
         new BuscaPage(navegador)
                 .BuscarUsuario("Alysson Fernandes Marques")
                 .SubmeterBusca();
+    }
+    //A cada teste fechar o navegador
+    @AfterEach
+    public void afterEach(){
+        navegador.quit();
     }
 }
